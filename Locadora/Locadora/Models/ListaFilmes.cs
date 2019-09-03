@@ -18,5 +18,44 @@ namespace Locadora.Models
         }
 
 
+        public Filmes getFilme(string name)
+        {
+            Filmes novofilme = null;
+            foreach (Filmes filme in Lista)
+            {
+                if (filme.Name == name)
+                {
+                    novofilme = filme;
+                    return novofilme;
+                }
+            }
+            return null;
+        }
+
+        public void Deleta(string name)
+        {
+            foreach(Filmes filmes in Lista)
+            {
+                if (filmes.Name == name)
+                {
+                    Lista.Remove(filmes);
+                    break;
+                }
+            }
+        }
+
+        public void Atualiza(Filmes filmes)
+        {
+            foreach(Filmes procura in Lista)
+            {
+                if (procura.Name == filmes.Name)
+                {
+                    Lista.Remove(filmes);
+                    Lista.Add(filmes);
+                    break;
+                }
+            }
+        }
+
     }
 }
