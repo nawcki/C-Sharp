@@ -25,6 +25,7 @@ namespace Locadora.Controllers
         [HttpPost]
         public ActionResult AdicionaUsuario(Filmes filme)
         {
+            
             filmes.CriaUsuario(filme);
             return RedirectToAction("Index");
         }
@@ -43,22 +44,17 @@ namespace Locadora.Controllers
             return RedirectToAction("Index");
         }
 
-        public ViewResult Atualiza()
+        public ViewResult Atualiza(string id)
         {
-            return View();
+            return View(filmes.getFilme(id));
         }
         [HttpPost]
-        public RedirectToRouteResult Atualiza(Filmes filme)
+        public RedirectToRouteResult Atualiza(string nomes, FormCollection collection)
         {
-            var id = filmes.Find(e => e.Name == name);
-            //int id = filmes.Lista.IndexOf(filme);
-            filmes.Atualiza(id, filme.Name);
-            return RedirectToAction("Index");
-        }
 
-        public int teste(Filmes filme)
-        {
-            return 0;
+            var aux = filmes.getFilme(nomes);
+            filmes.Atualiza(aux,nomes);
+            return RedirectToAction("Index");
         }
     }
 

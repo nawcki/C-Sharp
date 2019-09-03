@@ -14,6 +14,8 @@ namespace Locadora.Models
         }
         public void CriaUsuario(Filmes filmes)
         {
+            int id = Lista.Count();
+            filmes.Id = id + 1;
             Lista.Add(filmes);
         }
 
@@ -44,11 +46,17 @@ namespace Locadora.Models
             }
         }
 
-        public void Atualiza(string name)
+        public void Atualiza(Filmes filme, string nome)
         {
-            var id = Lista.Find(e => e.Name == name);
-            //id.
-            //Lista[id].Name = name;
+            
+            foreach(Filmes filmes in Lista)
+            {
+                if(filmes.Id == filme.Id)
+                {
+                    filmes.Name = nome;
+                }
+            }
+            
         }
 
     }
