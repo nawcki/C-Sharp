@@ -44,17 +44,11 @@ namespace Locadora.Models
             }
         }
 
-        public void Atualiza(Filmes filmes)
+        public void Atualiza(string name)
         {
-            foreach(Filmes procura in Lista)
-            {
-                if (procura.Name == filmes.Name)
-                {
-                    Lista.Remove(filmes);
-                    Lista.Add(filmes);
-                    break;
-                }
-            }
+            var id = Lista.Find(e => e.Name == name);
+            //id.
+            //Lista[id].Name = name;
         }
 
     }

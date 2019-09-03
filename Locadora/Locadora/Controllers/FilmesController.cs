@@ -33,6 +33,8 @@ namespace Locadora.Controllers
         {
             return View(filmes.getFilme(id));
         }
+
+        
         [HttpPost]
         public RedirectToRouteResult Deleta(string id, FormCollection collection)
         {
@@ -40,5 +42,25 @@ namespace Locadora.Controllers
             filmes.Deleta(id);
             return RedirectToAction("Index");
         }
+
+        public ViewResult Atualiza()
+        {
+            return View();
+        }
+        [HttpPost]
+        public RedirectToRouteResult Atualiza(Filmes filme)
+        {
+            var id = filmes.Find(e => e.Name == name);
+            //int id = filmes.Lista.IndexOf(filme);
+            filmes.Atualiza(id, filme.Name);
+            return RedirectToAction("Index");
+        }
+
+        public int teste(Filmes filme)
+        {
+            return 0;
+        }
     }
+
+   
 }
