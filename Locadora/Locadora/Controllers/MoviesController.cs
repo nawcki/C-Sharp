@@ -34,15 +34,16 @@ namespace Locadora.Controllers
             {
                 var movie = new Movies();
                 movie.Nome = model.Nome;
+                movie.Id = model.Id;
 
                 Db.Movies.Add(movie);
                 Db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.movies = Db.Movies;
+            ViewBag.Movies = Db.Movies;
             return View(model);
         }
-
+        
         public ActionResult Edit(int? id)
         {
             if(id == null)
@@ -57,7 +58,7 @@ namespace Locadora.Controllers
             ViewBag.movies = Db.Movies;
             return View(movie);
         }
-
+        [HttpPost]
         public ActionResult Edit([Bind(Include ="Id, Nome")] Movies model)
         {
             if (ModelState.IsValid)
@@ -75,5 +76,31 @@ namespace Locadora.Controllers
             ViewBag.Movies = Db.Movies;
             return View(model);
         }
+
+        
+        public ActionResult Delete(int? id)
+        {
+            Movies movie = Db.Movies.Find(id);
+            Db.Movies.Remove(movie);
+            Db.SaveChanges();
+            ViewBag.Categories = Db.Movies;
+            return RedirectToAction("Index");
+        }
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Movies movie = Db.Movies.Find(id);
+            ViewBag.Categories = Db.Movies;
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(movie);
+        }
+
     }
 }
