@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora", "Locadora\Locadora.csproj", "{DBCBA432-8D20-47E1-8A47-3FE44DC4DF53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora", "Locadora\Locadora.csproj", "{07A7156D-9829-4E85-A48E-11C2C906153A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DBCBA432-8D20-47E1-8A47-3FE44DC4DF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBCBA432-8D20-47E1-8A47-3FE44DC4DF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBCBA432-8D20-47E1-8A47-3FE44DC4DF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBCBA432-8D20-47E1-8A47-3FE44DC4DF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A7156D-9829-4E85-A48E-11C2C906153A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A7156D-9829-4E85-A48E-11C2C906153A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A7156D-9829-4E85-A48E-11C2C906153A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A7156D-9829-4E85-A48E-11C2C906153A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {16B3C5CE-3D1D-4338-B195-9687EC2CABEB}
+		SolutionGuid = {996D3DE9-154C-41EA-81C5-0D1B26817ECD}
 	EndGlobalSection
 EndGlobal
