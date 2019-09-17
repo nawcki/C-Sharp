@@ -1,0 +1,41 @@
+﻿@model Locadora.Models.Movies
+
+@{
+    ViewBag.Title = "Deletar Serviço";
+}
+
+<h1>Deletar Serviço</h1>
+<div class="form-horizontal">
+    <fieldset disabled="disabled">
+        @Html.Partial("ModelForm", this.Model)
+    </fieldset>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Deletar Serviço" class="btn btn-danger" data-target="#ModalConfirmaDelete" data-toggle="modal" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-warning" })
+            </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="ModalConfirmaDelete">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Ops, olha o que você vai fazer em!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p><h3 class="text-danger">Tem certeza que deseja <strong>me</strong> deletar, esse serviço tão útil? :( </h3></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-danger">Deletar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    }
+</div>
